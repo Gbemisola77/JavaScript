@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Validate Inputs</title>
+
+        <script>
+            function validateForm() {
+                var x = document.forms["myForm"]["fname"].value;
+                var y = document.forms["myForm"]["id1"].value;
+                if(x == "" || y == "") {
+                    alert("Name/ age cannot be empty");
+                    return false;
+                }
+                else
+                alert("successfully logged in");
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myForm" onsubmit="validateNameForm()">
+        Name: <input type="text" name="fname"><br>
+        Age: <input id="id1" type="number" min="10"><br>
+        <input type="submit" value="Login"><br>
+        <p id="message"></p>
+    </form>
+    </body>
+</html>
