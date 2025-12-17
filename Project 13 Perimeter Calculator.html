@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>Perimeter Calculator</title>
+</head>
+<body>
+  <h1>Perimeter Calculator</h1>
+
+  <label>Choose a shape:</label>
+  <select id="shape">
+    <option value="rectangle">Rectangle</option>
+    <option value="triangle">Triangle</option>
+    <option value="circle">Circle</option>
+    <option value="square">Square</option>
+  </select>
+
+  <br><br>
+  <label>Enter values (comma separated):</label>
+  <input type="text" id="values" placeholder="e.g. 5,10">
+
+  <br><br>
+  <button onclick="calculate()">Calculate</button>
+  <p id="result"></p>
+
+  <script>
+    function calculate() {
+      let shape = document.getElementById("shape").value;
+      let values = document.getElementById("values").value.split(",").map(Number);
+      let perimeter;
+
+      if (shape === "rectangle") {
+        // needs length and width
+        perimeter = 2 * (values[0] + values[1]);
+      } else if (shape === "triangle") {
+        // needs 3 sides
+        perimeter = values[0] + values[1] + values[2];
+      } else if (shape === "circle") {
+        // needs radius
+        perimeter = 2 * Math.PI * values[0];
+      } else if (shape === "square") {
+        // needs side
+        perimeter = 4 * values[0];
+      } else {
+        perimeter = "Invalid shape!";
+      }
+
+      document.getElementById("result").innerText = "Perimeter: " + perimeter;
+    }
+  </script>
+
+</body>
+</html>
