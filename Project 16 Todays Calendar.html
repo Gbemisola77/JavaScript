@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Todays Calendar</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                height: 100vh;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            }
+
+            .clock-container {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 40px 60px;
+                border-radius: 20px;
+                backdrop-filter: blur(12px);
+                box-shadow: 0 0 30px  rgba(0, 0, 0, 0.5);
+            }
+            
+            #myClock {
+                font-size: 64px;
+                color: #00ffd5;
+                letter-spacing: 4px;
+                text-shadow: 
+                0 0 10px rgba(0, 255, 213, 0.7),
+                0 0 20px rgba(0, 255, 213, 0.5);
+            }
+            .label{
+                margin-top: 10px;
+                text-align: center;
+                font-size: 14px;
+                color: #ffffffcc;
+                letter-spacing: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 id="today"></h2>
+
+        <script> 
+        const today = new Date(); 
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }; 
+        document.getElementById("today").textContent = today.toLocaleDateString(undefined, options); 
+        </script>
+    </body>
+</html>
