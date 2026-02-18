@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Modern Slideshow</title>
+    </head>
+    <body>
+        <div class="slideshow-container">
+            <div class="myslides">
+                <img src="360_F_49545683_bjOhdVIb84WtodAaXYLUTit3KjM0r0DJ.jpg">
+                <div class="text">Beautiful nature</div>
+            </div>
+             <div class="myslides">
+                <img src="images (11).jpg">
+                <div class="text">Explore the world</div>
+            </div>
+            <a onclick="plusSlides(-1)" class="prev"> < </a>
+             <a onclick="plusSlides(1)" class="prev"> > </a>
+
+             <div class="dot">
+                <span class="dot" onclick="CurrentSlide(1)"></span>
+                <span class="dot" onclick="CurrentSlide(2)"></span>
+                <span class="dot" onclick="CurrentSlide(3)"></span>
+             </div>
+        </div>
+        <script>
+            let slideIndex = 1
+            showSlides(slideIndex)
+
+            function plusSlides(n){
+                showSlides(slideIndex +=n);
+            }
+
+            function CurrentSlide(n){
+                showSlides(slideIndex = n);
+            }
+
+            functionshowSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+
+                if (n > slides.length) {slidesIndex = 1}
+                if (n < 1) {slidesIndex = slides.length}
+
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+
+                for (i = 0; i < dot.length; i++) {
+                    dot[i].className = dot[i].className.replace("active","");
+                }
+
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += "active";
+            }
+
+            // Auto slide
+            setInterval(() => {
+                plusSlides(1);
+            }, 3000);
+        </script>
+    </body>
+</html>
