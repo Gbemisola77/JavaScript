@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Website</title>
+    <link rel="stylesheet" href="style.css">
+
+    <section>
+  <img class="mySlides" src="images (1).jpg" style="height:400px; width:800px;">
+  <img class="mySlides" src="images (2).jpg" style="height:400px; width:700px;">
+  <img class="mySlides" src="images (3).jpg" style="height:400px; width:700px;">
+</section>
+
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+ 
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+    header {
+      background-color: #002147;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #003366;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px;
+      background-color: white;
+      margin: 20px;
+      border-radius: 10px;
+    }
+    .services img, .about img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #002147;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+  
+  </head>
+  <body>
+    
+        <!-- HERO SECTION -->
+         <header class="hero">
+            <div class="hero-cont">
+                <h1>Welcome to My Amazing Website</h1>
+                <p>Modern • Clean • Beautiful</p>
+                <a href="#" class="btn">Explore More</a>
+            </div>
+         </header>
+
+         <!-- SECTION ONE -->
+          <section class="section section-dark">
+            <h2>Web Development</h2>
+            <p>
+                Web development is the work involved in developing a website for the Internet
+                or an intranet. It includes web design, programming, and database management.
+            </p>
+          </section>
+
+          <!-- PARALLAX IMAGE -->
+           <section class="parallax">
+            <div class="parallax-text">
+                Beautiful Design Experience
+            </div>
+            </section>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Phone:  0901 229 7804</p>
+    <p>Address: 245 Herbert Macaulay Way, Alagomeji-Yaba, Yaba, Lagos 101212, Lagos</p>
+    <p>Random Address</p>
+  </section>
+    <section class="section section-dark">
+        <p>&copy; 2026 Website Creating Company. All rights reserved.</p>
+        <p>&copy; Made by Gbemisola Akinyemi</p>
+      <p>&copy; Thank You for Acknowledging our Services</p>
+    </section>
+  </body>
+</html>
